@@ -1,0 +1,8 @@
+/* App-specific container layouts (All core styles are in index.css and modular component stylesheets) */
+.portfolio-app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}

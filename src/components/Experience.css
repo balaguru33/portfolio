@@ -1,0 +1,112 @@
+.timeline-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.timeline-line {
+  display: none; /* Removed the complex vertical background line for a cleaner card layout */
+}
+
+.timeline-node {
+  position: relative;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+
+.timeline-node:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-marker {
+  display: none; /* Avoid template-looking dot timelines */
+}
+
+/* Crisp career card panels */
+.experience-card {
+  padding: 28px;
+}
+
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exp-role {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.exp-company {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.exp-duration {
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.exp-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-point-item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.point-bullet {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.point-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.exp-cert-link {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  vertical-align: middle;
+  transition: all var(--transition-fast);
+}
+
+.exp-cert-link:hover {
+  border-color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.05);
+  color: var(--text-primary);
+}

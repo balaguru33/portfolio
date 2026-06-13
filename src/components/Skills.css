@@ -1,0 +1,132 @@
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.skills-category-card {
+  padding: 28px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.category-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-sm);
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.category-icon-wrapper svg {
+  width: 18px;
+  height: 18px;
+}
+
+.category-title {
+  font-size: 1.15rem;
+  font-weight: 750;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+}
+
+@media (max-width: 576px) {
+  .skills-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.skill-level {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+}
+
+.level-advanced {
+  color: var(--text-primary);
+  background-color: var(--border-color);
+}
+
+.level-proficient {
+  color: var(--text-secondary);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
+}
+
+.level-intermediate {
+  color: var(--text-muted);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.skill-progress-track {
+  height: 4px;
+  background-color: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-progress-bar {
+  height: 100%;
+  border-radius: 100px;
+  background-color: var(--text-primary);
+}
+
+.fill-advanced {
+  width: 90%;
+}
+
+.fill-proficient {
+  width: 75%;
+}
+
+.fill-intermediate {
+  width: 60%;
+}
