@@ -130,3 +130,9 @@
 .fill-intermediate {
   width: 60%;
 }
+
+@media (max-width: 576px) {
+  .skills-category-card {
+    padding: 20px;
+  }
+}

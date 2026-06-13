@@ -10,6 +10,17 @@
     grid-template-columns: 1fr;
     gap: 30px;
   }
+  .contact-info {
+    align-items: center;
+    text-align: center;
+  }
+  .info-card {
+    width: 100%;
+    max-width: 500px;
+  }
+  .copy-btn {
+    margin: 0 auto;
+  }
 }
 
 .contact-info {
@@ -113,6 +124,9 @@
   .form-row {
     grid-template-columns: 1fr;
     gap: 0;
+  }
+  .contact-form-container {
+    padding: 20px;
   }
 }
 

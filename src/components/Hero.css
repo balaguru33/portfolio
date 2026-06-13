@@ -124,7 +124,8 @@
 }
 
 @media (max-width: 992px) {
-  .hero-actions {
+  .hero-actions,
+  .hero-socials {
     justify-content: center;
   }
 }

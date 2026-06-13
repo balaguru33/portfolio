@@ -156,3 +156,12 @@
 .project-action-link:hover {
   color: var(--text-primary);
 }
+
+@media (max-width: 576px) {
+  .project-card-header {
+    padding: 20px 20px 0;
+  }
+  .project-body {
+    padding: 20px;
+  }
+}
