@@ -163,17 +163,50 @@
 .portrait-frame {
   width: 100%;
   max-width: 360px;
-  background-color: var(--bg-secondary);
+  background-color: rgba(12, 8, 39, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   padding: 16px;
   border-radius: var(--border-radius-sm);
   transition: all var(--transition-normal);
+  position: relative;
+  z-index: 1;
+}
+
+.portrait-frame::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  border-radius: calc(var(--border-radius-sm) + 2px);
+  z-index: -1;
+  opacity: 0.2;
+  transition: opacity var(--transition-normal);
+}
+
+.portrait-frame:hover::after {
+  opacity: 1;
+  animation: rotate-gradient 4s linear infinite;
+  background: conic-gradient(from 0deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+}
+
+@keyframes rotate-gradient {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .portrait-frame:hover {
-  border-color: var(--border-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.6);
+  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px -15px rgba(99, 102, 241, 0.25);
 }
 
 .portrait-img {

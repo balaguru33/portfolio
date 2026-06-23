@@ -155,6 +155,26 @@
 
 .project-action-link:hover {
   color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.project-card .project-title {
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-title {
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.project-card .project-index {
+  transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-index {
+  color: var(--accent-secondary);
 }
 
 @media (max-width: 576px) {
