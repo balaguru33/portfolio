@@ -16,7 +16,7 @@
 
 /* Scroll state - solid black background to block out background text completely and ensure perfect readability */
 .navbar.scrolled {
-  background-color: #030712;
+  background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
@@ -153,7 +153,7 @@
   align-items: center;
   padding: 24px 0;
   gap: 20px;
-  background-color: #030712;
+  background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
   opacity: 0;
   visibility: hidden;
