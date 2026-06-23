@@ -34,25 +34,7 @@
   color-scheme: dark;
 }
 
-/* Light mode overrides (sleek and crisp) */
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-tertiary: #f3f4f6;
-    
-    --accent-rgb: 79, 70, 229;
-    --accent-primary: #4f46e5;
-    --accent-secondary: #0891b2;
-    
-    --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-muted: #9ca3af;
-    
-    --border-color: #e5e7eb;
-    --border-hover: #d1d5db;
-  }
-}
+
 
 /* ----------------------------------------------------
    BASE STYLES & RESET
@@ -69,7 +51,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-primary);
+  background-image: radial-gradient(circle at 50% 50%, #0d0630 0%, var(--bg-primary) 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.5;
@@ -102,8 +85,8 @@ body::after {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 80% 20%, rgba(217, 70, 239, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 15% 65%, rgba(249, 115, 22, 0.08) 0%, transparent 45%);
+    radial-gradient(circle at 80% 20%, rgba(217, 70, 239, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 15% 65%, rgba(249, 115, 22, 0.15) 0%, transparent 45%);
   pointer-events: none;
   z-index: -2;
 }
