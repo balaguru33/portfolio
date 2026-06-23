@@ -7,18 +7,15 @@
   z-index: 1000;
   display: flex;
   align-items: center;
+  background-color: transparent;
   border-bottom: 1px solid transparent;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
-/* Scroll state - solid black background to block out background text completely and ensure perfect readability */
 .navbar.scrolled {
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-obsidian);
+  border-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-container {
@@ -28,53 +25,58 @@
   height: 100%;
 }
 
+/* Enver Logo Styling */
 .navbar-logo {
-  font-size: 1.2rem;
-  font-weight: 800;
   display: flex;
   align-items: center;
-  letter-spacing: -0.04em;
-  gap: 2px;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.logo-icon-wrapper {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform var(--transition-fast);
 }
 
-.navbar-logo:hover {
-  transform: scale(1.03);
+.navbar-logo:hover .logo-icon-wrapper {
+  transform: rotate(15deg);
 }
 
-.logo-symbol {
-  color: var(--text-primary);
-  font-weight: 700;
+.logo-icon-svg {
+  width: 100%;
+  height: 100%;
 }
 
-.logo-text {
-  /* Dark grey text for minimal branding aesthetic */
-  color: #6b7280 !important;
-  -webkit-text-fill-color: #6b7280 !important;
-  font-weight: 850;
-  text-transform: uppercase;
-  transition: text-shadow var(--transition-fast);
+.navbar-logo .logo-text {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--text-primary) !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
 }
 
-.navbar-logo:hover .logo-text {
-  text-shadow: 0 0 15px rgba(107, 114, 128, 0.5);
-}
-
+/* Links List */
 .navbar-links {
   display: flex;
-  gap: 28px;
+  gap: 40px;
 }
 
 .nav-link {
-  font-size: 0.85rem;
-  font-weight: 700;
-  /* Bright gray for high visibility on dark headers */
-  color: #9ca3af; 
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  padding: 6px 0;
-  transition: color var(--transition-fast);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
   position: relative;
+  padding: 8px 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-primary);
 }
 
 .nav-link::after {
@@ -84,7 +86,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  background-color: var(--color-primary);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -96,91 +98,88 @@
   transform-origin: left;
 }
 
-.nav-link:hover,
-.nav-link.active {
-  color: #ffffff;
+/* Action button */
+.btn-navbar-contact {
+  background-color: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--border-radius-sm);
+  padding: 10px 32px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
 }
 
-/* Mobile Toggle Hamburger button */
-.mobile-toggle {
+.btn-navbar-contact:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(84, 84, 212, 0.15);
+}
+
+/* Hamburger mobile toggle */
+.mobile-toggle-btn {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 20px;
-  height: 14px;
   background: transparent;
   border: none;
+  color: var(--text-primary);
   cursor: pointer;
   z-index: 1010;
 }
 
-.hamburger-line {
-  width: 100%;
-  height: 2px;
-  background-color: #ffffff;
-  transition: all var(--transition-fast);
+/* Mobile responsive drawer */
+.mobile-nav-drawer {
+  display: none;
 }
 
 @media (max-width: 768px) {
-  .navbar-links {
+  .navbar-links,
+  .navbar-actions-desktop {
     display: none;
   }
 
-  .mobile-toggle {
+  .mobile-toggle-btn {
+    display: block;
+  }
+
+  .mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-obsidian);
     display: flex;
-  }
-  
-  /* Hamburger Open State Animations */
-  .mobile-toggle.open .hamburger-line:nth-child(1) {
-    transform: translateY(6px) rotate(45deg);
-  }
-  .mobile-toggle.open .hamburger-line:nth-child(2) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    z-index: 1000;
     opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all var(--transition-normal);
   }
-  .mobile-toggle.open .hamburger-line:nth-child(3) {
-    transform: translateY(-6px) rotate(-45deg);
+
+  .mobile-nav-drawer.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
   }
-}
 
-/* Mobile Drawer */
-.mobile-nav-drawer {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 24px 0;
-  gap: 20px;
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: all var(--transition-normal);
-}
+  .mobile-nav-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+  }
 
-.mobile-nav-drawer.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active {
+    color: var(--text-primary);
+  }
 
-.mobile-nav-link {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #9ca3af;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  transition: all var(--transition-fast);
-}
-
-.mobile-nav-link:hover,
-.mobile-nav-link.active {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.03);
+  .mobile-nav-contact-btn {
+    margin-top: 16px;
+    width: 200px;
+  }
 }

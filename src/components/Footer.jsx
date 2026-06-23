@@ -6,7 +6,7 @@ export default function Footer() {
   const handleLinkClick = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80;
+      const offset = 96; // Navbar height
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -20,44 +20,38 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-container">
-      <div className="footer-content container">
-        <div className="footer-top">
+    <footer className="footer-section">
+      <div className="footer-container container">
+        {/* Left Side: Logo */}
+        <div className="footer-left-branding">
           <a href="#home" className="footer-logo" onClick={(e) => { e.preventDefault(); handleLinkClick('home'); }}>
-            <span className="logo-symbol">&lt;</span>
-            <span className="logo-text gradient-text">Balaguna.Dev</span>
-            <span className="logo-symbol"> /&gt;</span>
+            <div className="footer-logo-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '32px', height: '32px' }}>
+                <circle cx="20" cy="20" r="16" stroke="url(#footerLogoGrad)" strokeWidth="8"/>
+                <defs>
+                  <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="#5454D4" />
+                    <stop offset="1" stopColor="#00D2FF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <span className="footer-logo-text">Thirubalagurumoorthi G</span>
           </a>
-
-          <div className="footer-nav">
-            <a href="#about" onClick={(e) => { e.preventDefault(); handleLinkClick('about'); }}>About</a>
-            <a href="#skills" onClick={(e) => { e.preventDefault(); handleLinkClick('skills'); }}>Skills</a>
-            <a href="#projects" onClick={(e) => { e.preventDefault(); handleLinkClick('projects'); }}>Projects</a>
-            <a href="#experience" onClick={(e) => { e.preventDefault(); handleLinkClick('experience'); }}>Experience</a>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); handleLinkClick('contact'); }}>Contact</a>
-          </div>
         </div>
 
-        <div className="footer-divider"></div>
-
-        <div className="footer-bottom">
-          <p className="copyright-text">
-            © {currentYear} Thirubalagurumoorthi G. All rights reserved. Designed & built for MNC opportunities.
-          </p>
-          
-          <div className="footer-socials">
-            <a href="https://github.com/balaguru33" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              GitHub
-            </a>
-            <span className="social-divider">•</span>
-            <a href="https://www.linkedin.com/in/thirubalagurumoorthi-g-25a362240" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              LinkedIn
-            </a>
-            <span className="social-divider">•</span>
-            <a href="mailto:balaguru3012@gmail.com" aria-label="Email">
-              Email
-            </a>
+        {/* Center / Right: Nav links and social shortcuts */}
+        <div className="footer-right-meta">
+          <div className="footer-social-links">
+            <a href="https://github.com/balaguru33" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span className="footer-dot-divider">•</span>
+            <a href="https://www.linkedin.com/in/thirubalagurumoorthi-g-25a362240" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <span className="footer-dot-divider">•</span>
+            <a href="mailto:balaguru3012@gmail.com">Email</a>
           </div>
+          <p className="copyright-info-text">
+            © {currentYear} Thirubalagurumoorthi G. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>

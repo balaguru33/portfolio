@@ -10,6 +10,13 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="portfolio-app">
+      {/* Background ambient blobs */}
+      <div className="bg-glow-blobs">
+        <div className="glow-blob-1"></div>
+        <div className="glow-blob-2"></div>
+        <div className="glow-blob-3"></div>
+      </div>
+
       <Navbar />
       <main>
         <Hero />
