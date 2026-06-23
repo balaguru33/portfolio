@@ -79,7 +79,7 @@ export default function Projects() {
           {filteredProjects.map((project, idx) => (
             <div
               key={idx}
-              className="project-card interactive-card"
+              className={`project-card interactive-card proj-${['orange', 'indigo', 'emerald'][idx]}`}
               onMouseMove={handleMouseMove}
             >
               <div className="project-card-header">
