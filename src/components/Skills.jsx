@@ -96,7 +96,7 @@ export default function Skills() {
           {skillCategories.map((category, catIdx) => (
             <div
               key={catIdx}
-              className={`skills-category-card interactive-card cat-${['indigo', 'cyan', 'amber', 'emerald'][catIdx]}`}
+              className={`skills-category-card interactive-card cat-${['purple', 'pink', 'orange', 'blue'][catIdx]}`}
               onMouseMove={handleMouseMove}
             >
               <div className="category-header">

@@ -45,7 +45,7 @@
   line-height: 1.05;
   font-weight: 850;
   letter-spacing: -0.05em;
-  background: linear-gradient(135deg, #a855f7 0%, #6366f1 50%, #06b6d4 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #d946ef 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -167,7 +167,7 @@
 .portrait-frame {
   width: 100%;
   max-width: 360px;
-  background-color: rgba(12, 8, 39, 0.45);
+  background-color: rgba(13, 7, 43, 0.45);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
@@ -195,7 +195,7 @@
 .portrait-frame:hover::after {
   opacity: 1;
   animation: rotate-gradient 4s linear infinite;
-  background: conic-gradient(from 0deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+  background: conic-gradient(from 0deg, var(--accent-primary), var(--accent-secondary), #f97316, var(--accent-primary));
 }
 
 @keyframes rotate-gradient {

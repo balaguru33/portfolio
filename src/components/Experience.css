@@ -104,12 +104,12 @@
   font-weight: 700;
   font-family: var(--font-mono);
   color: var(--text-primary);
-  background: rgba(99, 102, 241, 0.08);
-  border: 1px solid rgba(99, 102, 241, 0.25);
+  background: rgba(217, 70, 239, 0.08);
+  border: 1px solid rgba(217, 70, 239, 0.25);
   padding: 4px 10px;
   border-radius: 4px;
   white-space: nowrap;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 10px rgba(217, 70, 239, 0.05);
 }
 
 .exp-points {
@@ -142,8 +142,8 @@
 .exp-cert-link {
   font-size: 0.7rem;
   font-family: var(--font-mono);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #f97316;
+  border: 1px solid rgba(249, 115, 22, 0.25);
   padding: 2px 6px;
   border-radius: 4px;
   margin-left: 10px;
@@ -152,13 +152,13 @@
   gap: 2px;
   vertical-align: middle;
   transition: all var(--transition-fast);
-  background: rgba(16, 185, 129, 0.04);
+  background: rgba(249, 115, 22, 0.04);
 }
 
 .exp-cert-link:hover {
-  border-color: #10b981;
-  background: rgba(16, 185, 129, 0.15);
+  border-color: #f97316;
+  background: rgba(249, 115, 22, 0.15);
   color: #ffffff;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
   transform: translateY(-1px);
 }
